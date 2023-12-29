@@ -3326,7 +3326,7 @@ static void signal_handler(int sig)
 		signal(sig, SIG_IGN);
 		applog(LOG_INFO, "SIGINT received, exiting");
 		proper_exit(EXIT_CODE_KILLED);
-		break; work->data
+		break;
 	case SIGTERM:
 		applog(LOG_INFO, "SIGTERM received, exiting");
 		proper_exit(EXIT_CODE_KILLED);
