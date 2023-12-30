@@ -17,6 +17,8 @@ Nvidia GPU Support Only
 git clone https://github.com/xrpinals/XpsMiner
 cd XpsMiner/compat
 git clone https://github.com/xrpinals/curl-for-windows
+cd curl-for-windows
+git submodule update --init --recursive
 cd ..
 ``` 
 
@@ -93,8 +95,6 @@ fi
 
 ```
 git clone https://github.com/xrpinals/XpsMiner
-cd XpsMiner/compat
-git clone https://github.com/xrpinals/curl-for-windows
 cd ..
 ```
 
