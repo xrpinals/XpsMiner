@@ -12,7 +12,13 @@ Nvidia GPU Support Only
 
 3. Download and Install CUDA 9.1 (https://developer.nvidia.com/cuda-91-download-archive)
 
-4. `git clone https://github.com/xrpinals/XpsMiner`
+4. Fetch the xpsminer project
+```
+git clone https://github.com/xrpinals/XpsMiner
+cd XpsMiner/compat
+git clone https://github.com/xrpinals/curl-for-windows
+cd ..
+``` 
 
 5. `cd XpsMiner`
 
