@@ -41,7 +41,7 @@ XpsMiner_SOURCES	= elist.h miner.h compat.h \
 			  x16r/x16r.cu x16r/cuda_x16_echo512.cu x16r/cuda_x16_fugue512.cu \
 			  x16r/cuda_x16_shabal512.cu x16r/cuda_x16_simd512_80.cu \
 			  x17/cuda_x17_sha512.cu x17/cuda_x17_haval256.cu \
-			  x17r/x17r.cu
+			  x17/x17.cu
 
 if HAVE_NVML
 nvml_defs = -DUSE_WRAPNVML
