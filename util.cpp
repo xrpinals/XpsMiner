@@ -1808,7 +1808,6 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 
 		bool ret = false;
 		
-		
 		sctx->notify_init = true;
 
 		nbits = json_string_value(json_array_get(params, 1));
@@ -1816,10 +1815,11 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 		prevhash = json_string_value(json_array_get(params, 0));
 		if (!prevhash || strlen(prevhash) != 40) {
 			applog(LOG_ERR, "Stratum notify: invalid parameters");
-			goto out;
+			//goto out;
+			return ret;
 		}
-		pthread_mutex_lock(&stratum_work_lock);
 
+		pthread_mutex_lock(&stratum_work_lock);
 
 		sctx->notify_init = true;
 		sctx->job.job_id = new char[5];
@@ -1841,7 +1841,8 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 		pthread_mutex_unlock(&stratum_work_lock);
 
 		ret = true;
-		goto out;
+		//goto out;
+		return ret;
 	}
 
 	const char *job_id, *prevhash, *input,*type,*msg;
@@ -1856,7 +1857,8 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 	if (!job_id || !prevhash || !input ||
 		strlen(prevhash) != 64 || strlen(input) != 64) {
 		applog(LOG_ERR, "Stratum notify: invalid parameters");
-		goto out;
+		//goto out;
+		return ret;
 	}
 
 	pthread_mutex_lock(&stratum_work_lock);
@@ -1880,7 +1882,7 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 
 	ret = true;
 
-out:
+//out:
 	return ret;
 }
 
